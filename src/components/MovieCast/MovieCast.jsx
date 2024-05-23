@@ -22,24 +22,30 @@ export default function MovieCast() {
   }, [movieId]);
 
   return (
-      <div className={ css.div}>
-      <ul className={css.list}>
-        {cast.map(({ id, original_name, profile_path, character }) => (
-            <li key={id} className={css.item }>
-            <img
-              src={
-                profile_path
-                  ? `https://image.tmdb.org/t/p/w500${profile_path}`
-                  : "https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg"
-              }
-              alt={original_name}
-              className={css.image} height={375} width={250}
-            />
-            <p className={css.name}>{original_name}</p>
-            <p className={css.character}>Character: {character}</p>
-          </li>
-        ))}
-      </ul>
+    <div className={css.div}>
+      {cast.length > 0 ? (
+        <ul className={css.list}>
+          {cast.map(({ id, original_name, profile_path, character }) => (
+            <li key={id} className={css.item}>
+              <img
+                src={
+                  profile_path
+                    ? `https://image.tmdb.org/t/p/w500${profile_path}`
+                    : "https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg"
+                }
+                alt={original_name}
+                className={css.image}
+                height={375}
+                width={250}
+              />
+              <p className={css.name}>{original_name}</p>
+              <p className={css.character}>Character: {character}</p>
+            </li>
+          ))}
+        </ul>
+      ) : (
+          <p className={ css.text}> We don&apos;t have any information about cast of this movie</p>
+      )}
 
       {loading && <Loader />}
     </div>

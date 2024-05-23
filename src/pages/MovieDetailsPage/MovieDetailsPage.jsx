@@ -1,5 +1,5 @@
-import { useParams, Link, NavLink, Outlet } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useParams, Link, NavLink, Outlet, useLocation } from "react-router-dom";
+import { useEffect, useRef, useState } from "react";
 import clsx from "clsx";
 import { fetchMovieDetails } from "../../API";
 import Loader from "../../components/Loader/Loader";
@@ -17,6 +17,8 @@ const getLinkClass = ({ isActive }) => {
 
 export default function MovieDetailsPage() {
   const { movieId } = useParams();
+  const location = useLocation();
+  const getBackLink = useRef(location.state?.from ?? "/");
   const [movieInfo, setMovieInfo] = useState(null);
   const [loading, setLoading] = useState(false);
 
@@ -50,7 +52,7 @@ export default function MovieDetailsPage() {
 
   return (
     <>
-      <Link to="/">
+      <Link to={getBackLink.current}>
         <button className={css.button}>Go back</button>
       </Link>
       {movieInfo && (

@@ -30,3 +30,9 @@
 .character{
     font-size: 17px;
 }
+
+.text{
+    font-weight: 500;
+    margin-left: 30px;
+    margin-bottom: 30px;
+}
