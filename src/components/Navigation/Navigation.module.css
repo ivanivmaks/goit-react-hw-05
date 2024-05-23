@@ -1,0 +1,24 @@
+.header {
+  border-bottom: 2px solid grey;
+}
+
+.list {
+  display: flex;
+  gap: 15px;
+  list-style: none;
+  padding: 15px;
+  padding-left: 30px;
+}
+
+.link {
+  text-decoration: none;
+  color: black;
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.active {
+  color: rgb(19, 178, 38);
+}
+
+

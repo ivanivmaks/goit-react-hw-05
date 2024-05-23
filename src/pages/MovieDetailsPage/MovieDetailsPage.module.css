@@ -1,0 +1,49 @@
+.button {
+  font-weight: 500;
+  margin: 15px 0;
+  padding: 15px;
+  border-radius: 10px;
+  color: rgb(19, 178, 38);
+  background-color: white;
+  border: 2px solid rgb(19, 178, 38);
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: rgb(19, 178, 38);
+  color: white;
+}
+
+.container {
+  display: flex;
+  gap: 50px;
+
+  padding-bottom: 30px;
+  border-bottom: 2px solid grey;
+}
+
+.image {
+  width: 300px;
+  border-radius: 20px;
+  margin-left: 30px;
+}
+
+.infoList {
+  display: flex;
+  margin-top: 20px;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.list {
+  display: flex;
+  gap: 10px;
+}
+
+.parag {
+  font-weight: 700;
+}
+
+.span {
+  font-weight: 400;
+}

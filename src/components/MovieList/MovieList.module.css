@@ -1,0 +1,18 @@
+.list{
+    padding-left: 30px;
+}
+
+.item {
+  margin-bottom: 5px;
+}
+
+.link {
+  font-size: 18px;
+  font-weight: 600;
+  color: inherit;
+  text-decoration: none;
+}
+
+.link:hover {
+  color: rgb(19, 178, 38);
+}
