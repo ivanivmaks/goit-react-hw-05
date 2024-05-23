@@ -1,0 +1,32 @@
+.div{
+  margin-bottom: 20px;
+}
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin: 0 auto;
+  justify-content: center;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  text-align: center;
+  width: 250px;
+}
+
+.image {
+  border-radius: 10px;
+}
+
+.name {
+  font-weight: 500;
+  font-size: 20px;
+}
+
+.character{
+    font-size: 17px;
+}

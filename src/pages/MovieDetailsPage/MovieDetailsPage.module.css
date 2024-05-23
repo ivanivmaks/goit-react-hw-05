@@ -47,3 +47,33 @@
 .span {
   font-weight: 400;
 }
+
+
+.addTitle {
+  margin: 15px 0 5px 0;
+}
+
+.addList {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 0 0 15px 30px;
+  border-bottom: 2px solid grey;
+  margin-bottom: 30px;
+}
+
+.link {
+  font-size: 18px;
+  font-weight: 600;
+  color: inherit;
+  text-decoration: none;
+}
+
+.link:hover {
+  color: rgb(19, 178, 38);
+}
+
+.active {
+  color: rgb(19, 178, 38);
+}
+

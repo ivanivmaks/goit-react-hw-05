@@ -17,6 +17,10 @@
   font-size: 20px;
 }
 
+.link:hover{
+ color: rgb(19, 178, 38);
+}
+
 .active {
   color: rgb(19, 178, 38);
 }

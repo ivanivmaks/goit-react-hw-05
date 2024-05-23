@@ -9,7 +9,7 @@ export default function HomePage() {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    const fetchTrendingFilms = () => {
+    const trendingFilms = () => {
       setLoading(true);
 
       fetchTrendings()
@@ -17,7 +17,7 @@ export default function HomePage() {
         .catch((error) => console.log(error))
         .finally(() => setLoading(false));
     };
-    fetchTrendingFilms();
+    trendingFilms();
   }, []);
 
   return (

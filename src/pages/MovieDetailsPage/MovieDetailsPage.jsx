@@ -1,5 +1,6 @@
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, NavLink, Outlet } from "react-router-dom";
 import { useEffect, useState } from "react";
+import clsx from "clsx";
 import { fetchMovieDetails } from "../../API";
 import Loader from "../../components/Loader/Loader";
 import css from "./MovieDetailsPage.module.css";
@@ -10,16 +11,25 @@ function convertMinutes(minutes) {
   return `${hours} hours ${remainMinutes} minutes`;
 }
 
+const getLinkClass = ({ isActive }) => {
+  return clsx(css.link, isActive && css.active);
+};
+
 export default function MovieDetailsPage() {
   const { movieId } = useParams();
   const [movieInfo, setMovieInfo] = useState(null);
   const [loading, setLoading] = useState(false);
+
   useEffect(() => {
-    setLoading(true);
-    fetchMovieDetails(movieId)
-      .then((movieDetail) => setMovieInfo(movieDetail))
-      .catch((error) => console.log(error))
-      .finally(() => setLoading(false));
+    const movieDetails = () => {
+      setLoading(true);
+      fetchMovieDetails(movieId)
+        .then((movieDetail) => setMovieInfo(movieDetail))
+        .catch((error) => console.log(error))
+        .finally(() => setLoading(false));
+    };
+
+    movieDetails();
   }, [movieId]);
 
   if (!movieInfo) {
@@ -75,6 +85,22 @@ export default function MovieDetailsPage() {
           </div>
         </div>
       )}
+      <div>
+        <h3 className={css.addTitle}>Additional information</h3>
+        <ul className={css.addList}>
+          <li>
+            <NavLink to="cast" className={getLinkClass}>
+              Cast
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="reviews" className={getLinkClass}>
+              Reviews
+            </NavLink>
+          </li>
+        </ul>
+        <Outlet />
+      </div>
       {loading && <Loader />}
     </>
   );
